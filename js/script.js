@@ -200,6 +200,9 @@ async function main() {
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
         console.log("Setting valume to", e.target.value, "/100 ")
         currentSong.volume = parseInt(e.target.value) / 100;
+        if(currentSong.volume >0){
+            document.querySelector(".volico").src = document.querySelector(".volico").src.replace("mute.svg","volume.svg");
+        }
     })
 
     // add event listener to mute the track
